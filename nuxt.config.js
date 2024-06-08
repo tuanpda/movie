@@ -69,7 +69,7 @@ export default {
     timeout: 20000,
   },
 
-  serer:{
+  server:{
     port: 80,
     host: '103.82.196.234' // server may chu
   },
