@@ -40,6 +40,11 @@ export default {
         type: 'text/javascript',
         charset: 'utf-8',
       },
+      {
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7253316566111375',
+        async: true,
+        crossorigin: 'anonymous',
+      },
     ],
     __dangerouslyDisableSanitizersByTagID: {
       'gtag': ['innerHTML'],
