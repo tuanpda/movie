@@ -176,8 +176,8 @@ export default {
           `/api/movies/search-movie-series?query=${this.searchQuery}`
         );
         this.moviesSeries = resSeriMove.data.data;
-        console.log(this.moviesSeries);
-        this.isLoading = false;
+        // console.log(this.moviesSeries);
+        this.isLoading = false; 
       } catch (error) {
         console.log(error);
         this.isLoading = false;
