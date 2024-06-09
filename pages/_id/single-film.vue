@@ -25,9 +25,7 @@
               <div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">
                 <div class="card__content">
                   <div class="card__wrap">
-                    <span class="card__rate"
-                      ><i class="icon ion-ios-star"></i>Not rated</span
-                    >
+                    <span class="card__rate"><i class="icon ion-ios-star"></i>Not rated</span>
 
                     <ul class="card__list">
                       <li>HD</li>
@@ -95,9 +93,7 @@
 
             <!-- share -->
             <div class="details__share">
-              <span class="details__share-title"
-                >Bấm vào nút Play để xem phim</span
-              >
+              <span class="details__share-title">Bấm vào nút Play để xem phim</span>
 
               <ul class="details__share-list">
                 <li class="facebook">
@@ -123,14 +119,11 @@
 
     <!-- phim liên quan -->
     <div class="container" style="margin-top: 50px">
-      <section
-        class="section"
-        style="
+      <section class="section" style="
           background: url('img/section/section.jpg') no-repeat center center;
           background-size: cover;
           margin-top: 70px;
-        "
-      >
+        ">
         <div class="col-12">
           <h2 class="section__title">Xem các phim cùng thể loại</h2>
         </div>
@@ -142,26 +135,22 @@
           </div>
           <div class="row">
             <!-- card -->
-            <div
-              class="col-6 col-sm-4 col-lg-3 col-xl-2"
-              v-for="(movie, index) in moviesRelted"
-              :key="index"
-            >
+            <div class="col-6 col-sm-4 col-lg-3 col-xl-2" v-for="(movie, index) in moviesRelted" :key="index">
               <div class="card">
                 <div class="card__cover">
                   <img :src="movie.image" alt="" />
                   <a class="card__play">
-                    <nuxt-link :to="`${movie._id}/single-film`">
+                    <a class="card__play" @click="$router.push(`/${movie._id}/single-film`)">
                       <i class="icon ion-ios-play"></i>
-                    </nuxt-link>
+                    </a>
                   </a>
                 </div>
                 <div class="card__content">
                   <h3 class="card__title">
                     <a>
-                      <nuxt-link :to="`/${movie._id}/single-film`">
+                      <a @click="$router.push(`/${movie._id}/single-film`)">
                         {{ movie.title }}
-                      </nuxt-link>
+                      </a>
                     </a>
                   </h3>
                 </div>
@@ -245,4 +234,8 @@ export default {
   background: url("@/assets/img/section/section.jpg") no-repeat center center;
   background-size: cover;
 }
+
+.card__play {
+    cursor: pointer;
+  }
 </style>

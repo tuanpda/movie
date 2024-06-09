@@ -27,9 +27,7 @@
               <div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">
                 <div class="card__content">
                   <div class="card__wrap">
-                    <span class="card__rate"
-                      ><i class="icon ion-ios-star"></i>Not rated</span
-                    >
+                    <span class="card__rate"><i class="icon ion-ios-star"></i>Not rated</span>
 
                     <ul class="card__list">
                       <li>HD</li>
@@ -82,13 +80,8 @@
           <div class="accordion" id="accordion">
             <div class="accordion__card">
               <div class="card-header" id="headingOne">
-                <button
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
+                <button type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
                   <span>Xem các tập khác liên quan</span>
                 </button>
               </div>
@@ -113,25 +106,16 @@
                       <tbody>
                         <tr v-for="(movie, index) in othersMovies" :key="index">
                           <td style="text-align: center">
-                            <nuxt-link
-                              :to="`/${movie._id}/single-film-series`"
-                              style="color: inherit"
-                              >{{ index + 1 }}</nuxt-link
-                            >
+                            <nuxt-link :to="`/${movie._id}/single-film-series`" style="color: inherit">{{ index + 1
+                              }}</nuxt-link>
                           </td>
                           <td>
-                            <nuxt-link
-                              :to="`/${movie._id}/single-film-series`"
-                              style="color: inherit"
-                              >{{ movie.title }}</nuxt-link
-                            >
+                            <nuxt-link :to="`/${movie._id}/single-film-series`" style="color: inherit">{{ movie.title
+                              }}</nuxt-link>
                           </td>
                           <td style="text-align: center">
-                            <nuxt-link
-                              :to="`/${movie._id}/single-film-series`"
-                              style="color: inherit"
-                              >{{ movie.tapso }}</nuxt-link
-                            >
+                            <nuxt-link :to="`/${movie._id}/single-film-series`" style="color: inherit">{{ movie.tapso
+                              }}</nuxt-link>
                           </td>
                         </tr>
                       </tbody>
@@ -168,9 +152,7 @@
 
             <!-- share -->
             <div class="details__share">
-              <span class="details__share-title"
-                >Bấm vào nút Play để xem phim</span
-              >
+              <span class="details__share-title">Bấm vào nút Play để xem phim</span>
 
               <ul class="details__share-list">
                 <li class="facebook">
@@ -196,14 +178,11 @@
 
     <!-- phim liên quan -->
     <div class="container" style="margin-top: 50px">
-      <section
-        class="section"
-        style="
+      <section class="section" style="
           background: url('img/section/section.jpg') no-repeat center center;
           background-size: cover;
           margin-top: 70px;
-        "
-      >
+        ">
         <div class="col-12">
           <h2 class="section__title">Xem các phim cùng thể loại</h2>
         </div>
@@ -215,28 +194,22 @@
           </div>
           <div class="row">
             <!-- card -->
-            <div
-              class="col-6 col-sm-4 col-lg-3 col-xl-2"
-              v-for="(movie, index) in moviesRelted"
-              :key="index"
-            >
+            <div class="col-6 col-sm-4 col-lg-3 col-xl-2" v-for="(movie, index) in moviesRelted" :key="index">
               <div class="card">
                 <div class="card__cover">
                   <img :src="movie.image" alt="" />
                   <a class="card__play">
-                    <nuxt-link :to="`${movie._id}/single-film`">
+                    <a class="card__play" @click="$router.push(`/${movie._id}/single-film-series`)">
                       <i class="icon ion-ios-play"></i>
-                    </nuxt-link>
+                    </a>
                   </a>
                 </div>
                 <div class="card__content">
                   <h3 class="card__title">
-                    <a>
-                      <nuxt-link :to="`/${movie._id}/single-film`">
-                        {{ movie.title }}
-                      </nuxt-link>
+                    <a @click="$router.push(`/${movie._id}/single-film-series`)">
+                      {{ movie.title }}
                     </a>
-                  </h3>
+                    < </h3>
                 </div>
               </div>
             </div>
@@ -331,8 +304,10 @@ export default {
 }
 
 .table-container {
-  max-height: 500px; /* Chiều cao cố định bạn muốn đặt, có thể điều chỉnh theo ý muốn */
-  overflow-y: auto; /* Bật cuộn dọc khi nội dung vượt quá chiều cao cố định */
+  max-height: 500px;
+  /* Chiều cao cố định bạn muốn đặt, có thể điều chỉnh theo ý muốn */
+  overflow-y: auto;
+  /* Bật cuộn dọc khi nội dung vượt quá chiều cao cố định */
 }
 
 .accordion__list {
@@ -347,11 +322,18 @@ export default {
 }
 
 .nuxt-link {
-  color: inherit; /* Đảm bảo liên kết giữ nguyên màu của phần tử cha */
-  text-decoration: none; /* Bỏ gạch chân mặc định của liên kết */
+  color: inherit;
+  /* Đảm bảo liên kết giữ nguyên màu của phần tử cha */
+  text-decoration: none;
+  /* Bỏ gạch chân mặc định của liên kết */
 }
 
 .nuxt-link:hover {
-  text-decoration: underline; /* Tùy chọn thêm gạch chân khi hover nếu muốn */
+  text-decoration: underline;
+  /* Tùy chọn thêm gạch chân khi hover nếu muốn */
 }
+
+.card__play {
+    cursor: pointer;
+  }
 </style>
