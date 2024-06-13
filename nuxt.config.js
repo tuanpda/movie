@@ -12,20 +12,7 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    // Khai báo các script cần thêm vào
-    script: [
-      { src: "@/assets/js/bootstrap.bundle.min", defer: true },
-      { src: "@/assets/js/jquery-3.3.1.min", defer: true },
-      { src: "@/assets/js/jquery.mCustomScrollbar.min", defer: true },
-      { src: "@/assets/js/jquery.morelines.min", defer: true },
-      { src: "@/assets/js/jquery.mousewheel.min", defer: true },
-      { src: "@/assets/js/main.js", defer: true },
-      { src: "@/assets/js/owl.carousel.min.js", defer: true },
-      { src: "@/assets/js/photoswipe-ui-default.min.js", defer: true },
-      { src: "@/assets/js/photoswipe.min.js", defer: true },
-      { src: "@/assets/js/plyr.min.js", defer: true },
-      { src: "@/assets/js/wNumb.js", defer: true },
-    ],
+
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -66,7 +53,7 @@ export default {
     // baseURL: "/",
     // baseURL: "http://14.224.129.177:5555", // máy chủ tuanpda
     baseURL: "https://103.82.196.234:5555",
-    // baseURL: "http://localhost:5555",
+    // baseURL: "https://localhost:5555",
     timeout: 20000,
   },
 

@@ -330,7 +330,7 @@
               <!-- end header nav -->
 
               <!-- header auth -->
-              <div class="header__auth">
+              <div class="header__auth" style="padding-right: 30px;">
                 <button
                   class="header__search-btn"
                   type="button"
@@ -417,7 +417,18 @@ export default {
     max-height: calc(100vh - 200px); /* Adjust based on your header height */
     overflow-y: auto; /* Enable vertical scrolling */
     overflow-x: hidden; /* Disable horizontal scrolling */
+    top: 60px !important;
   }
+
+  .header__wrap {
+    margin-left: 0px !important;
+  }
+
+  .header__btn {
+    position: absolute;
+    right: 30px;
+  }
+
 }
 
 .header__dropdown {

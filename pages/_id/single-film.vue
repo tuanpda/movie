@@ -61,7 +61,7 @@
 
         <!-- player -->
         <div class="col-12 col-xl-6">
-          <a :href="singleFilm.streamsUrl" rel="noopener noreferrer">
+          <a target="_blank" :href="singleFilm.streamsUrl" rel="noopener noreferrer">
             <div style="height: 300px">
               <vue-plyr :options="options">
                 <video controls crossorigin playsinline>
