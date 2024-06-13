@@ -25,30 +25,7 @@ export default {
       { src: "@/assets/js/photoswipe.min.js", defer: true },
       { src: "@/assets/js/plyr.min.js", defer: true },
       { src: "@/assets/js/wNumb.js", defer: true },
-      {
-        src: "https://www.googletagmanager.com/gtag/js?id=AW-16601469480",
-        async: true
-      },
-      {
-        hid: 'gtag',
-        innerHTML: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-16601469480');
-        `,
-        type: 'text/javascript',
-        charset: 'utf-8',
-      },
-      {
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7253316566111375',
-        async: true,
-        crossorigin: 'anonymous',
-      },
     ],
-    __dangerouslyDisableSanitizersByTagID: {
-      'gtag': ['innerHTML'],
-    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -88,7 +65,7 @@ export default {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // baseURL: "/",
     // baseURL: "http://14.224.129.177:5555", // máy chủ tuanpda
-    baseURL: "http://103.82.196.234:5555",
+    baseURL: "https://103.82.196.234:5555",
     // baseURL: "http://localhost:5555",
     timeout: 20000,
   },
