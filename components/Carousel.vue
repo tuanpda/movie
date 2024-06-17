@@ -118,6 +118,12 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 768px) {
+  .carousel {
+    display: none; /* Ẩn carousel trên thiết bị có chiều rộng <= 768px */
+  }
+}
+
 .section {
   padding: 20px;
   position: relative;
