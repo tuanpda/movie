@@ -9,7 +9,7 @@
               <!-- header logo -->
               <a href="/" class="header__logo">
                 <img
-                  src="img/myLogo/phim-mien-phi-high-resolution-logo-white-transparent.png"
+                  src="/icon/phim-mien-phi-high-resolution-logo-white-transparent.svg"
                   alt=""
                 />
               </a>
@@ -25,7 +25,7 @@
                 <!-- dropdown -->
                 <li class="header__nav-item">
                   <a
-                    class="dropdown-toggle header__nav-link"
+                    class="dropdown-toggle header__nav-link header__nav-link bold"
                     href="/"
                     role="button"
                     id="dropdownMenuHome"
@@ -40,14 +40,16 @@
                 <!-- dropdown -->
                 <li class="header__nav-item">
                   <nuxt-link to="/categorys/category-film-series"
-                    ><a href="" class="header__nav-link">Phim Bộ</a></nuxt-link
+                    ><a href="" class="header__nav-link bold"
+                      >Phim Bộ</a
+                    ></nuxt-link
                   >
                 </li>
                 <!-- end dropdown -->
 
                 <li class="header__nav-item">
                   <nuxt-link :to="`/ActionFilm/category-film`">
-                    <a href="javascript:void(0)" class="header__nav-link"
+                    <a href="javascript:void(0)" class="header__nav-link bold"
                       >Phim Hành động</a
                     >
                   </nuxt-link>
@@ -55,7 +57,7 @@
 
                 <li class="header__nav-item">
                   <nuxt-link :to="`/AnimelFilm/category-film`">
-                    <a href="javascript:void(0)" class="header__nav-link"
+                    <a href="javascript:void(0)" class="header__nav-link bold"
                       >Phim Hoạt hình</a
                     >
                   </nuxt-link>
@@ -330,7 +332,7 @@
               <!-- end header nav -->
 
               <!-- header auth -->
-              <div class="header__auth" style="padding-right: 30px;">
+              <div class="header__auth" style="padding-right: 30px">
                 <button
                   class="header__search-btn"
                   type="button"
@@ -358,6 +360,7 @@
                 v-model="searchQuery"
                 type="text"
                 placeholder="Tìm kiếm bất kỳ phim nào bạn muốn ..."
+                @keydown.enter="search"
               />
               <button @click="search" type="button">search</button>
             </div>
@@ -373,7 +376,7 @@
 export default {
   data() {
     return {
-      searchQuery: "",
+      searchQuery: '',
       isSearchVisible: false,
       isDropdownVisible: {
         catalog: false,
@@ -428,7 +431,10 @@ export default {
     position: absolute;
     right: 30px;
   }
+}
 
+.header__nav-link.bold {
+  font-weight: bold;
 }
 
 .header__dropdown {
@@ -459,7 +465,7 @@ export default {
 }
 
 .header__dropdown-menu:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;

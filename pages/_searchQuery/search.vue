@@ -5,40 +5,7 @@
       <!-- Biểu tượng loading -->
       <div class="loading-spinner"></div>
     </div>
-    <div>
-      <!-- page title -->
-      <template v-if="movies.length <= 0">
-        <section class="section section--first section--bg section-background">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="section__wrap">
-                  <!-- section title -->
-                  <h2 class="section__title">Không có dữ liệu phim lẻ</h2>
-                  <!-- end section title -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </template>
-      <template v-else>
-        <section class="section section--first section--bg section-background">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="section__wrap">
-                  <!-- section title -->
-                  <h2 class="section__title">Kết quả tìm kiếm Phim lẻ</h2>
-                  <!-- end section title -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </template>
-      <!-- end page title -->
-
+    <div style="margin-top: 150px">
       <!-- catalog movies -->
       <div class="catalog" v-if="movies.length > 0">
         <div class="container">
@@ -71,39 +38,6 @@
         </div>
       </div>
       <!-- end catalog -->
-
-      <!-- page title -->
-      <template v-if="moviesSeries.length <= 0">
-        <section class="section section--first section--bg section-background">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="section__wrap">
-                  <!-- section title -->
-                  <h2 class="section__title">Không có dữ liệu phim bộ</h2>
-                  <!-- end section title -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </template>
-      <template v-else>
-        <section class="section section--first section--bg section-background">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="section__wrap">
-                  <!-- section title -->
-                  <h2 class="section__title">Kết quả tìm kiếm Phim bộ</h2>
-                  <!-- end section title -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </template>
-      <!-- end page title -->
 
       <!-- catalog movies series -->
       <div class="catalog" v-if="moviesSeries.length > 0">
@@ -177,7 +111,7 @@ export default {
         );
         this.moviesSeries = resSeriMove.data.data;
         // console.log(this.moviesSeries);
-        this.isLoading = false; 
+        this.isLoading = false;
       } catch (error) {
         console.log(error);
         this.isLoading = false;
@@ -189,7 +123,7 @@ export default {
 
 <style scoped>
 .section-background {
-  background: url("@/assets/img/section/section.jpg") no-repeat center center;
+  background: url('@/assets/img/section/section.jpg') no-repeat center center;
   background-size: cover;
   margin-bottom: 50px;
 }

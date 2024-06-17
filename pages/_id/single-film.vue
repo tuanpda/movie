@@ -25,7 +25,9 @@
               <div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">
                 <div class="card__content">
                   <div class="card__wrap">
-                    <span class="card__rate"><i class="icon ion-ios-star"></i>Not rated</span>
+                    <span class="card__rate"
+                      ><i class="icon ion-ios-star"></i>Not rated</span
+                    >
 
                     <ul class="card__list">
                       <li>HD</li>
@@ -61,7 +63,11 @@
 
         <!-- player -->
         <div class="col-12 col-xl-6">
-          <a target="_blank" :href="singleFilm.streamsUrl" rel="noopener noreferrer">
+          <a
+            target="_blank"
+            :href="singleFilm.streamsUrl"
+            rel="noopener noreferrer"
+          >
             <div style="height: 300px">
               <vue-plyr :options="options">
                 <video controls crossorigin playsinline>
@@ -74,6 +80,13 @@
         <!-- end player -->
 
         <div class="col-12">
+          <!-- nội dung phim -->
+          <div>
+            <div class="content">
+              {{ singleFilm.content }}
+            </div>
+          </div>
+
           <div class="details__wrap">
             <!-- availables -->
             <div class="details__devices">
@@ -93,7 +106,9 @@
 
             <!-- share -->
             <div class="details__share">
-              <span class="details__share-title">Bấm vào nút Play để xem phim</span>
+              <span class="details__share-title"
+                >Bấm vào nút Play để xem phim</span
+              >
 
               <ul class="details__share-list">
                 <li class="facebook">
@@ -118,12 +133,14 @@
     <!-- end details content -->
 
     <!-- phim liên quan -->
-    <div class="container" style="margin-top: 50px">
-      <section class="section" style="
+    <div class="container">
+      <section
+        class="section"
+        style="
           background: url('img/section/section.jpg') no-repeat center center;
           background-size: cover;
-          margin-top: 70px;
-        ">
+        "
+      >
         <div class="col-12">
           <h2 class="section__title">Xem các phim cùng thể loại</h2>
         </div>
@@ -135,12 +152,19 @@
           </div>
           <div class="row">
             <!-- card -->
-            <div class="col-6 col-sm-4 col-lg-3 col-xl-2" v-for="(movie, index) in moviesRelted" :key="index">
+            <div
+              class="col-6 col-sm-4 col-lg-3 col-xl-2"
+              v-for="(movie, index) in moviesRelted"
+              :key="index"
+            >
               <div class="card">
                 <div class="card__cover">
                   <img :src="movie.image" alt="" />
                   <a class="card__play">
-                    <a class="card__play" @click="$router.push(`/${movie._id}/single-film`)">
+                    <a
+                      class="card__play"
+                      @click="$router.push(`/${movie._id}/single-film`)"
+                    >
                       <i class="icon ion-ios-play"></i>
                     </a>
                   </a>
@@ -174,24 +198,24 @@ export default {
       moviesRelted: [],
       options: {
         controls: [
-          "play-large", // The large play button in the center
-          "restart", // Restart playback
-          "rewind", // Rewind by the seek time
-          "play", // Play/pause playback
-          "fast-forward", // Fast forward by the seek time
-          "progress", // The progress bar and scrubber for playback and buffering
-          "current-time", // The current time of playback
-          "duration", // The full duration of the media
-          "mute", // Toggle mute
-          "volume", // Volume control
-          "captions", // Toggle captions
-          "settings", // Settings menu
-          "pip", // Picture-in-picture (currently Safari only)
-          "airplay", // Airplay (currently Safari only)
-          "download", // Show a download button with a link to either the current source or a custom URL you specify in your options
-          "fullscreen", // Toggle fullscreen
+          'play-large', // The large play button in the center
+          'restart', // Restart playback
+          'rewind', // Rewind by the seek time
+          'play', // Play/pause playback
+          'fast-forward', // Fast forward by the seek time
+          'progress', // The progress bar and scrubber for playback and buffering
+          'current-time', // The current time of playback
+          'duration', // The full duration of the media
+          'mute', // Toggle mute
+          'volume', // Volume control
+          'captions', // Toggle captions
+          'settings', // Settings menu
+          'pip', // Picture-in-picture (currently Safari only)
+          'airplay', // Airplay (currently Safari only)
+          'download', // Show a download button with a link to either the current source or a custom URL you specify in your options
+          'fullscreen', // Toggle fullscreen
         ],
-        settings: ["captions", "quality", "speed"],
+        settings: ['captions', 'quality', 'speed'],
         speed: { selected: 1, options: [0.5, 1, 1.5, 2] }, // Playback speeds
         quality: { default: 720, options: [576, 720, 1080] }, // Video quality
       },
@@ -221,7 +245,7 @@ export default {
           this.isLoading = false;
         }
       } catch (error) {
-        console.error("Error fetching single film data:", error);
+        console.error('Error fetching single film data:', error);
         this.isLoading = false;
       }
     },
@@ -231,11 +255,16 @@ export default {
 
 <style scoped>
 .section-background {
-  background: url("@/assets/img/section/section.jpg") no-repeat center center;
+  background: url('@/assets/img/section/section.jpg') no-repeat center center;
   background-size: cover;
 }
 
 .card__play {
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
+
+.content {
+  color: white;
+  margin-top: 20px;
+}
 </style>
