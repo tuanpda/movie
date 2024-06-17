@@ -32,6 +32,20 @@ export default {
           'sha384-/lLdeDXcg75fFKvNaXc6K+P80Jk8U+1mKJUYqkLSxqr18HIUvJYVN42+m23Zbw4b',
         crossorigin: 'anonymous',
       },
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-6ZPH8QHNM0',
+        async: true,
+      },
+      {
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+  
+          gtag('config', 'G-6ZPH8QHNM0');
+        `,
+        type: 'text/javascript',
+      },
     ],
   },
 
