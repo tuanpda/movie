@@ -5,7 +5,6 @@
     style="
       background: url('img/section/section.jpg') no-repeat center center;
       background-size: cover;
-      margin-top: 70px;
     "
   >
     <div class="container">

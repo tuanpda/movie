@@ -11,8 +11,23 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.2/dist/css/coreui.min.css',
+      //   integrity: 'sha384-39e9UaGkm/+yp6spIsVfzcs3j7ac7G2cg0hzmDvtG11pT1d7YMnOC26w4wMPhzsL',
+      //   crossorigin: 'anonymous'
+      // }
+    ],
+    script: [
+      { src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', type: 'text/javascript' },
+      {
+        src: 'https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.2/dist/js/coreui.bundle.min.js',
+        integrity: 'sha384-/lLdeDXcg75fFKvNaXc6K+P80Jk8U+1mKJUYqkLSxqr18HIUvJYVN42+m23Zbw4b',
+        crossorigin: 'anonymous'
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -52,8 +67,8 @@ export default {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // baseURL: "/",
     // baseURL: "http://14.224.129.177:5555", // máy chủ tuanpda
-    baseURL: "https://103.82.196.234:5555",
-    // baseURL: "https://localhost:5555",
+    baseURL: "http://103.82.196.234:5555",
+    // baseURL: "http://localhost:5555",
     timeout: 20000,
   },
 
