@@ -30,7 +30,7 @@
                 <p style="font-weight: bold; color: red">
                   {{ item.year }} - {{ item.country }}
                 </p>
-                <p>Nội dung: {{ item.content }}</p>
+                <p>Nội dung: {{ truncateTitle(item.content) }}</p>
               </div>
               <div class="right-panel">
                 <img :src="item.image" alt="Movie Image" />
@@ -94,6 +94,13 @@ export default {
       } finally {
         this.isLoading = false;
       }
+    },
+    truncateTitle(title, length = 500) {
+      // Điều chỉnh độ dài theo nhu cầu
+      if (title.length > length) {
+        return title.substring(0, length) + '...';
+      }
+      return title;
     },
     nextSlide() {
       if (this.currentIndex < this.movies.length - 1) {
