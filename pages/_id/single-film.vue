@@ -26,7 +26,11 @@
                 <div class="card__content">
                   <div class="card__wrap">
                     <span class="card__rate"
-                      ><i class="icon ion-ios-star"></i>Not rated</span
+                      ><i class="icon ion-ios-eye"></i>
+                      <span style="font-weight: bold">{{
+                        singleFilm.view_count
+                      }}</span>
+                      &nbsp; lượt xem</span
                     >
 
                     <ul class="card__list">
@@ -236,6 +240,11 @@ export default {
           this.singleFilm = res.data.data[0];
           this.isLoading = false;
         }
+        // tính cho 1 lượt xem
+        const resSetView = await this.$axios.post(
+          `/api/movies/update-view-count/${idFilm}`
+        );
+
         const resReled = await this.$axios.get(
           `/api/movies/get-top-12-movie-relative-film?category=${this.singleFilm.category}`
         );
